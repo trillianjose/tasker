@@ -1,0 +1,6 @@
+<%= form_for @task do |n| %>
+  <%= render 'shared/errors', model: @task %>
+  <%= n.text_field :description %><br>
+  <%= n.submit 'Add Task' %>
+<% end %>
+<%= link_to 'Return', :index %>

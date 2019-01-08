@@ -1,5 +1,13 @@
 <ul>
+  <% if @task.size ==0 %>
+    <h3>No tasks yet</h3>
+  <% end %>
   <% @task.each do |task| %>
-    <li><%= link_to task.description, task %></li>
-    <% end %>
+    <tr>
+      <td><%= link_to task.description, task %></td>
+      <td><%= link_to 'Edit', edit_task_path %></td>
+      <td><%= link_to 'Destroy', task_path(task), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+
+  <% end %>
 </ul>
